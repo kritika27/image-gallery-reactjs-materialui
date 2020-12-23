@@ -1,23 +1,16 @@
 import React, { useState } from "react";
-//import ProgressBar from "./ProgressBar";
-import Item from "./Item";
+
+import Image from "./Image";
 import { v4 as uuidv4 } from "uuid";
-//import SearchBox from "./SearchBox";
+
 import "./index.css";
+import "./App.css";
 
-const arr = () => {
-  let data = localStorage.getItem("gallery");
-  if (data) return JSON.parse(localStorage.getItem("gallery"));
-  else return [];
-};
-
-const UploadForm = () => {
+const UploadForm = ({ list, setList, filterTodos }) => {
   const [file, setFile] = useState([]);
   const [title, setTitle] = useState("");
   const [error, setError] = useState(null);
   const [hovered, setHovered] = useState(false);
-
-  const [list, setList] = useState([]);
 
   React.useEffect(() => {
     localStorage.setItem("gallery", JSON.stringify(list));
@@ -41,6 +34,15 @@ const UploadForm = () => {
 
   const types = ["image/png", "image/jpeg"];
 
+  const getBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = (error) => reject(error);
+      reader.readAsDataURL(file);
+    });
+  };
+
   const handleChange = (e) => {
     let selected = e.target.files[0];
     console.log(selected.name);
@@ -48,6 +50,10 @@ const UploadForm = () => {
     if (selected && types.includes(selected.type)) {
       setTitle(selected.name);
       setFile(URL.createObjectURL(e.target.files[0]));
+      getBase64(selected).then((base64) => {
+        localStorage["fileBase64"] = base64;
+        console.debug("file stored", base64);
+      });
       setError("");
     } else {
       setFile("");
@@ -58,7 +64,7 @@ const UploadForm = () => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <label>
+        <label className="upload">
           <input type="file" onChange={handleChange} />
           <span>+</span>
         </label>
@@ -77,9 +83,9 @@ const UploadForm = () => {
           {file && <div>{title}</div>}
         </div>
       </form>
-      <div className="img-grid">
-        {list.map((c, id) => (
-          <Item
+      <section className="movies">
+        {filterTodos.map((c, id) => (
+          <Image
             key={id}
             id={c.id}
             item={c.file}
@@ -92,7 +98,7 @@ const UploadForm = () => {
             title={c.title}
           />
         ))}
-      </div>
+      </section>
     </div>
   );
 };
