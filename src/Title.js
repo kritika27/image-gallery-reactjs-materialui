@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.css";
 
-const Title = ({ onSearchChange, search }) => {
+const Title = ({ onSearchChange, search, debounced, defaultValue }) => {
   return (
     <div className="title">
       <div
@@ -20,12 +20,11 @@ const Title = ({ onSearchChange, search }) => {
             borderBottom: "2px solid blue",
           }}
           placeholder="Search"
-          type="search"
+          defaultValue="hello"
           onChange={onSearchChange}
-          value={search}
         />
       </div>
-      <h2>Europe Trip</h2>
+      <h2>Image Gallery</h2>
       <p>
         "An Artist has no home in Europe except in Paris." -Friedrich Nietzsche
       </p>
