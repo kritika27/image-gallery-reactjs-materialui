@@ -59,29 +59,16 @@ const UploadForm = ({ list, setList, filterTodos }) => {
       setFile("");
       setError("Please upload an image file (png or jpg)");
     }
-    const newItem = {
-      id: uuidv4(),
-      title: title,
-      file: file,
-      favorite: false,
-      hovered: hovered,
-    };
-    e.preventDefault();
-    if (file) {
-      setList([...list, newItem]);
-      setFile("");
-      setTitle("");
-    }
   };
 
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label className="upload">
           <input type="file" onChange={handleChange} />
           <span>+</span>
         </label>
-
+        <button className="btn">Upload</button>
         <div className="output">
           {error && <div className="error">{error}</div>}
           {file && <div>{title}</div>}

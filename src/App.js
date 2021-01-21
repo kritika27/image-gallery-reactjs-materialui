@@ -2,13 +2,14 @@ import "./App.css";
 import React, { useState } from "react";
 import Title from "./Title";
 import UpdateForm from "./UpdateForm";
+import useDebouncedCallback from "use-debounce/lib/useDebouncedCallback";
 
 function App() {
   const [list, setList] = useState([]);
   const [search, setSearch] = useState("");
-  const handleSearch = (e) => {
-    setSearch(e.target.value);
-  };
+  const debounced = useDebouncedCallback((search) => {
+    setSearch(search);
+  }, 1000);
 
   const filterTodos = list.filter((todo) => {
     return todo.title.toLowerCase().includes(search.toLowerCase());
@@ -16,8 +17,11 @@ function App() {
 
   return (
     <div>
-      <Title onSearchChange={handleSearch} search={search} />
-
+      <Title
+        onSearchChange={(e) => debounced.callback(e.target.value)}
+        search={search}
+      />
+      <p>{search}</p>
       <UpdateForm list={list} filterTodos={filterTodos} setList={setList} />
     </div>
   );
