@@ -49,9 +49,10 @@
 
 .image-container {
 
-  
-    position: relative;
-    overflow: hidden;
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+    
   }
 
 .App {
@@ -87,15 +88,8 @@
 .movie-info i {
   margin-bottom: 0;
 }
-.image-container:hover .movie-info {
+.wrap:hover .movie-info {
   transform: translateY(0);
-}
-
-.image-container img{
-    width: 100%;
-    height: 400px;
-    display: block;
-    object-fit: cover;
 }
 
 .section {
@@ -116,6 +110,8 @@
   margin: 0 auto;
   padding-bottom: 5rem;
   padding-top: 3rem;
+
+   
 }
 
 @media screen and (min-width: 576px) {
@@ -171,4 +167,58 @@
 .change:hover{ 
  
   color: white;
+}
+.btn{
+  padding:5px;
+  color:#fff;
+  background-color: blue;
+  border: none;
+}
+
+.single-movie {
+  width: 90vw;
+  max-width: var(--max-width);
+  margin: 4rem auto;
+  display: grid;
+  gap: 2rem;
+}
+.single-movie img {
+  width: 100%;
+  display: block;
+}
+.single-movie p {
+  max-width: 35em;
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+  line-height: 1.8;
+}
+.movie {
+  position: relative;
+  overflow: hidden;
+}
+.movie img {
+  width: 100%;
+  height: 400px;
+  display: block;
+  object-fit: cover;
+}
+/*draft*/
+.wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.wrap{
+  padding:10px 20px;
+  border:2px solid red;
+  background-color: #fff;
+}
+.wrap img{
+  height:200px;
+  width:200px;
+  
 }
