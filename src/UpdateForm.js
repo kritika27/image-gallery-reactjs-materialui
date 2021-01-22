@@ -74,7 +74,7 @@ const UploadForm = ({ list, setList, filterTodos }) => {
           {file && <div>{title}</div>}
         </div>
       </form>
-      <section className="movies">
+      <section className="wrapper">
         {filterTodos.map((c, id) => (
           <Image
             key={id}
