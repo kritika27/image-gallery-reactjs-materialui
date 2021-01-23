@@ -69,7 +69,10 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+.wrap{
+  position: relative;
+  overflow: hidden;
+}
 .movie-info {
   
   position: absolute;
@@ -90,6 +93,7 @@
 }
 .wrap:hover .movie-info {
   transform: translateY(0);
+  
 }
 
 .section {
@@ -209,16 +213,18 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  position: relative;
-  overflow: hidden;
+  
+  
 }
 .wrap{
   padding:10px 20px;
-  border:2px solid red;
+
   background-color: #fff;
+  margin: 5px;
+  
 }
 .wrap img{
   height:200px;
   width:200px;
-  
+  object-fit:contain;
 }
