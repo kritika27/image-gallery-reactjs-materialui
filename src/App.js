@@ -21,7 +21,7 @@ function App() {
         onSearchChange={(e) => debounced.callback(e.target.value)}
         search={search}
       />
-      <p>{search}</p>
+
       <UpdateForm list={list} filterTodos={filterTodos} setList={setList} />
     </div>
   );

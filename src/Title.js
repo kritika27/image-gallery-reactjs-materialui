@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.css";
 
-const Title = ({ onSearchChange, search, debounced, defaultValue }) => {
+const Title = ({ onSearchChange }) => {
   return (
     <div className="title">
       <div
@@ -18,7 +18,7 @@ const Title = ({ onSearchChange, search, debounced, defaultValue }) => {
             borderBottom: "2px solid blue",
           }}
           placeholder="Search Photos.."
-          defaultValue="Search Cat"
+          defaultValue="Search for Cat"
           onChange={onSearchChange}
         />
       </div>
