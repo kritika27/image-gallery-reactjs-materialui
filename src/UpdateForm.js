@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-
 import Image from "./Image";
 import { v4 as uuidv4 } from "uuid";
-
 import "./index.css";
 import "./App.css";
 
@@ -11,10 +9,6 @@ const UploadForm = ({ list, setList, filterTodos }) => {
   const [title, setTitle] = useState("");
   const [error, setError] = useState(null);
   const [hovered, setHovered] = useState(false);
-
-  React.useEffect(() => {
-    localStorage.setItem("gallery", JSON.stringify(list));
-  }, [list]);
 
   const handleSubmit = (e) => {
     const newItem = {
@@ -26,6 +20,7 @@ const UploadForm = ({ list, setList, filterTodos }) => {
     };
     e.preventDefault();
     if (file) {
+      console.log(file);
       setList([...list, newItem]);
       setFile("");
       setTitle("");
@@ -52,6 +47,7 @@ const UploadForm = ({ list, setList, filterTodos }) => {
       setFile(URL.createObjectURL(e.target.files[0]));
       getBase64(selected).then((base64) => {
         localStorage["fileBase64"] = base64;
+
         console.debug("file stored", base64);
       });
       setError("");
@@ -61,6 +57,17 @@ const UploadForm = ({ list, setList, filterTodos }) => {
     }
   };
 
+  React.useEffect(() => {
+    localStorage.setItem("image", JSON.stringify(list));
+  }, [list]);
+
+  if (filterTodos.length < 1) {
+    return (
+      <h2 style={{ textAlign: "center", padding: "40px" }}>
+        No images matched your search criteria.
+      </h2>
+    );
+  }
   return (
     <div>
       <form onSubmit={handleSubmit}>

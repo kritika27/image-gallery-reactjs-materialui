@@ -42,7 +42,7 @@ const Image = ({
       a.click();
     });
   };
-  console.log(hovered);
+
   const handleItem = (e) => {
     setList(
       list.map((el) => {
@@ -60,29 +60,6 @@ const Image = ({
 
   var caption = title.slice(0, title.indexOf("."));
   return (
-    /*} <div className="image-container">
-      <img src={item} alt="gallery" />
-      <div className="movie-info">
-        <h4>{caption}</h4>
-        <i
-          onClick={() => handleComplete(id)}
-          alt=""
-          className={complete ? "fa fa-heart fav" : "fa fa-heart-o empty"}
-        ></i>
-
-        <i onClick={() => remove(id)} className="fa fa-trash del"></i>
-
-        <i
-          onClick={() => fileDownloadHandler(item)}
-          className="fa fa-download down"
-        ></i>
-        <label className="change">
-          <input type="file" onChange={handleItem} />
-          <span>+</span>
-        </label>
-      </div>
-  </div>*/
-
     <div className="wrap">
       <img src={item} alt="gallery" />
       <div className="movie-info">
@@ -101,7 +78,9 @@ const Image = ({
         ></i>
         <label className="change">
           <input type="file" onChange={handleItem} />
-          <span>+</span>
+          <span>
+            <i className="fa fa-pencil"></i>
+          </span>
         </label>
       </div>
     </div>

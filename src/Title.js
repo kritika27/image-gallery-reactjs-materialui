@@ -18,7 +18,7 @@ const Title = ({ onSearchChange }) => {
             borderBottom: "2px solid blue",
           }}
           placeholder="Search Photos.."
-          defaultValue="Search for Cat"
+          defaultValue="Cat"
           onChange={onSearchChange}
         />
       </div>
