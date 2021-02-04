@@ -163,15 +163,12 @@
     margin: 5px;
    
   
-    color:grey;
+    color:white;
     font-weight: bold;
     font-size: 20px;
   }
 
-.change:hover{ 
- 
-  color: white;
-}
+
 .btn{
   padding:5px;
   color:#fff;
