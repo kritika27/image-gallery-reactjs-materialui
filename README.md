@@ -2,7 +2,7 @@
 
 ## Description
 
-This is an Image Gallery built using Html,CSS,ReactJS with CRUD operations.
+This is an Image Gallery built using Html,CSS,ReactJS,Material UI with CRUD operations.
 
 ## Demo
 
