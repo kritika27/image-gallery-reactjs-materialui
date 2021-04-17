@@ -75,13 +75,11 @@ const UploadForm = ({ list, setList, filterTodos }) => {
         <Button type="submit" variant="contained" color="primary">
           Upload Image
         </Button>
-
         <div className="output">
           {error && <div className="error">{error}</div>}
           {file && <div>{title}</div>}
         </div>
       </form>
-
       <main>
         <Container className={classes.cardGrid} maxWidth="md">
           <Grid container spacing={4}>

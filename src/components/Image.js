@@ -7,15 +7,7 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 
-const Image = ({
-  id,
-  item,
-  list,
-  setList,
-  complete,
-  title,
-  //filterTodos,
-}) => {
+const Image = ({ id, item, list, setList, complete, title }) => {
   const remove = (id) => {
     setList(list.filter((el) => el.id !== id));
   };
@@ -62,20 +54,6 @@ const Image = ({
   };
 
   const useStyles = makeStyles((theme) => ({
-    icon: {
-      marginRight: theme.spacing(2),
-    },
-    heroContent: {
-      backgroundColor: theme.palette.background.paper,
-      padding: theme.spacing(8, 0, 6),
-    },
-    heroButtons: {
-      marginTop: theme.spacing(4),
-    },
-    cardGrid: {
-      paddingTop: theme.spacing(8),
-      paddingBottom: theme.spacing(8),
-    },
     card: {
       height: "100%",
       display: "flex",
@@ -86,10 +64,6 @@ const Image = ({
     },
     cardContent: {
       flexGrow: 1,
-    },
-    footer: {
-      backgroundColor: theme.palette.background.paper,
-      padding: theme.spacing(6),
     },
   }));
 
