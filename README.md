@@ -6,7 +6,7 @@ This is an Image Gallery built using Html,CSS,ReactJS,Material UI with CRUD oper
 
 ## Demo
 
-Link 👉 To be added.
+👉 [Link](https://frosty-galileo-d4c6b5.netlify.app/)
 
 ## Screenshot
 
