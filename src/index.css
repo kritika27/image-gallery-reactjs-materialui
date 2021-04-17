@@ -1,109 +1,80 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap");
 
-:root{
+:root {
   --primary: #efb6b2;
   --secondary: #4e4e4e;
   --error: #ff4a4a;
 }
 
 /* base styles & title */
-body{
+body {
+  margin: 0;
+  padding: 0;
   font-family: "Noto Serif";
   color: var(--secondary);
   background-color: whitesmoke;
 }
-.App{
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-.title h2, .title p{
-  text-align: center;
-  
-}
-.title h2{
-  margin-top: 10px;
-  margin-bottom:5px;
-  font-size: 2.6rem;
-}
 
 /* upload form styles */
-form{
-  margin: 20px auto 10px;
+form {
   text-align: center;
 }
-.upload input{
+.upload input {
   height: 0;
   width: 0;
   opacity: 0;
+  display: none;
 }
-.upload{
+.pencil {
+  display: none;
+}
+.upload {
   display: block;
   width: 30px;
   height: 30px;
-  
   border: 1px solid blue;
   border-radius: 50%;
   margin: 10px auto;
   line-height: 30px;
-  
-  color:blue;
+  color: blue;
   font-weight: bold;
   font-size: 24px;
 }
-.upload:hover{
- 
-  background:blue;
+.upload:hover {
+  background: blue;
   color: white;
 }
-.output{
-  height: 60px;
+.output {
   font-size: 0.8rem;
 }
-.error{
+.error {
   color: var(--error);
 }
 
-/* progress bar styles */
-.progress-bar{
-  height: 5px;
-  background: var(--primary);
-  margin-top: 20px;
+button:focus {
+  outline: none;
+  border: none;
 }
 
-
-button:focus{
-  outline:none;
-  border:none;
-}
-
-
-
-.fav{
+.fav {
   color: red;
- margin:5px;
+  margin: 5px;
 }
 
-.empty{
+.empty {
   color: red;
-  margin:5px;
-}
-.down{
-  color: white;
-  margin:5px;
-  
+  margin: 5px;
 }
 
-.del{
-  color:white;
-  margin:5px;
+.fa-download,
+.fa-trash,
+.fa-pencil {
+  color: #444;
+  cursor:pointer;
 }
 
-
-
-@media only screen and (max-width:600px){
-  .fav{
+@media only screen and (max-width: 600px) {
+  .fav {
     color: red;
-   
-  } 
+  }
 }
