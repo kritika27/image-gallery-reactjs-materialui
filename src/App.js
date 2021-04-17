@@ -1,16 +1,11 @@
-import "./App.css";
 import React, { useState } from "react";
-import Title from "./Title";
-import UpdateForm from "./UpdateForm";
+import Title from "./components/Title";
+import UpdateForm from "./components/UpdateForm";
+import Navbar from "./components/Navbar";
 import useDebouncedCallback from "use-debounce/lib/useDebouncedCallback";
 
-const arr = () => {
-  let data = localStorage.getItem("image");
-  if (data) return JSON.parse(localStorage.getItem("image"));
-  else return [];
-};
-function App() {
-  const [list, setList] = useState(arr);
+const App = () => {
+  const [list, setList] = useState([]);
   const [search, setSearch] = useState("");
 
   const debounced = useDebouncedCallback((search) => {
@@ -19,19 +14,18 @@ function App() {
 
   const filterTodos = list.filter((todo) => {
     return todo.title.toLowerCase().includes(search.toLowerCase());
-    
   });
 
   return (
-    <div>
-      <Title
+    <>
+      <Navbar
         onSearchChange={(e) => debounced.callback(e.target.value)}
         search={search}
       />
-
+      <Title />
       <UpdateForm list={list} filterTodos={filterTodos} setList={setList} />
-    </div>
+    </>
   );
-}
+};
 
 export default App;
