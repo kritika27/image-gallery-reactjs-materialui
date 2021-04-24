@@ -2,7 +2,7 @@
 
 ## Description
 
-This is an Image Gallery built using Html,CSS,ReactJS,Material UI with CRUD operations.
+This is an Image Gallery built using Html,CSS,ReactJS,Material UI with CRUD operations and debounce search functionality.The user can also download the images and mark his/her favorite images.
 
 ## Demo
 
@@ -10,7 +10,9 @@ This is an Image Gallery built using Html,CSS,ReactJS,Material UI with CRUD oper
 
 ## Screenshot
 
-To be added.
+![screenshot1](https://user-images.githubusercontent.com/4997491/115944191-ea3e3e80-a4d1-11eb-8297-cb80134fd44b.JPG)
+<br></br>
+![screenshot2](https://user-images.githubusercontent.com/4997491/115944195-ee6a5c00-a4d1-11eb-9b79-d5c7102391e3.JPG)
 
 ## Installation
 
